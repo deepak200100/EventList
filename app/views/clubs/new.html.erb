@@ -1,0 +1,23 @@
+<%= form_for @club do |form| %>  
+<ol class="">  
+  <li>  
+    <%= form.label :display_name, "display_name" %>  
+    <%= form.text_field :display_name %>  
+  </li>  
+  <li>  
+    <%= form.label :address, "address" %>  
+    <%= form.text_field :address %>  
+  </li>  
+  <li>  
+    <%= form.label :phone_number, "phone_number" %>  
+    <%= form.text_field :phone_number %>  
+  </li>  
+  <li>  
+    <%= form.label :display_pic, "display_pic" %>  
+    <%= form.text_field :display_pic %>  
+  </li>  
+  <li>  
+    <%= form.submit "Submit" %>  
+  </li>  
+</ol>  
+<% end %>  

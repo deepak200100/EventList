@@ -1,0 +1,22 @@
+<style>
+	.add_clubs{
+	position:fixed;
+	bottom:5px;
+	right:10px;
+	padding:10px 10px;
+}
+</style>
+<% @clubs.each_slice(4) do |four| %>
+          <div class="row" style="padding:20px;">
+             <% four.each do |club| %>
+             	<div class="col-md-2">
+					Name : <%=club.display_name%><br>
+					Address: <%=club.address%><br>
+					City : <%=club.city%><br>
+					Phone Number:<%=club.phone_number%><br>
+					<img src=<%=club.display_pic%> width="100px" height="100px">
+             	</div>
+             <% end %>
+          </div>
+ <% end %>
+<%= button_to "+", new_club_path, :class => "add_clubs", :method => :get %>

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<style>
+.pagecontent{
+	padding-top:20px;
+	padding-left:40px;
+}
+</style>
+<div class="wrapper">
+		<title>Page Title</title>
+		<%= javascript_tag do %>			
+			jQuery('ul.header-tabs li.active').removeClass('active');
+			jQuery('li[data-tab-name="<%=@selected_tab%>"]').addClass('active')
+		<% end %>
+		<div class="leftcontent" >
+			<% show_flash %>
+			<div class="alert notice" id="noticeajax" style="display:none;"></div>
+			<%= render :file => "layouts/header" %>
+			<div class="pagecontent" id="pagecontent">
+				<%= yield %>
+			</div>
+		</div>
+</div>
