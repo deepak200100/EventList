@@ -4,10 +4,10 @@
 	<div class="col-md-6">fhgfhg</div>
 	<div class="col-md-6">fhgfhg</div>
 </div>
-<% @clubs.each_slice(2) do |four| %>
+<% @clubs.each_slice(4) do |four| %>
           <div class="row">
-             <% @clubs do |club| %>
-             	<div class="col-md-6">
+             <% four.each do |club| %>
+             	<div class="col-md-4">
 					Name : <%=club.display_name%><br>
 					Address: <%=club.address%><br>
 					City : <%=club.city%><br>
