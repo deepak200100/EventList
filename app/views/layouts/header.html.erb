@@ -11,10 +11,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Location<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li class="active"><a href="#">Raebareli</a></li>
-            <li><a href="#">Chennai</a></li>
-            <li><a href="#">Bangalore</a></li>
-            <li><a href="#">Mumbai</a></li>
+            <% cities = City.all %>
+            <% cities.each do |city|%>
+            <li><a href="#"><%= city.city_name%></a></li>
+            <% end %>
           </ul>
         </li>
       </ul>
