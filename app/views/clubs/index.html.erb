@@ -1,13 +1,21 @@
-<div class="row">
-	<div class="col-md-6">fhgfhg</div>
-	<div class="col-md-6">fhgfhg</div>
-	<div class="col-md-6">fhgfhg</div>
-	<div class="col-md-6">fhgfhg</div>
-</div>
+<style>
+.add_clubs{
+	position:fixed;
+	bottom:5px;
+	right:10px;
+	padding:10px 10px;
+}
+.grid{
+    border-radius: 25px;
+    border: 2px solid #8AC007;
+    margin: 9px;
+    cursor: pointer;
+}
+</style>
 <% @clubs.each_slice(4) do |four| %>
-          <div class="row">
+          <div class="row" style="padding:20px;">
              <% four.each do |club| %>
-             	<div class="col-md-4">
+             	<div class="col-md-2 grid">
 					Name : <%=club.display_name%><br>
 					Address: <%=club.address%><br>
 					City : <%=club.city%><br>
@@ -17,4 +25,4 @@
              <% end %>
           </div>
  <% end %>
-<%= link_to "Add Clubs", new_club_path %>
+<%= button_to "+", new_club_path, :class => "add_clubs", :method => :get %>

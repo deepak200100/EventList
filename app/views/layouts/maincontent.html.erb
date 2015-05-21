@@ -6,17 +6,18 @@
 	padding-top:20px;
 	padding-left:40px;
 }
+.leftcontent{
+
+}
 </style>
 <div class="wrapper">
 		<title>Page Title</title>
 		<%= javascript_tag do %>			
-			jQuery('ul.header-tabs li.active').removeClass('active');
-			jQuery('li[data-tab-name="<%=@selected_tab%>"]').addClass('active')
+			setTimeout("$('#alert').html(' ');", 10000);
 		<% end %>
 		<div class="leftcontent" >
-			<% show_flash %>
-			<div class="alert notice" id="noticeajax" style="display:none;"></div>
 			<%= render :file => "layouts/header" %>
+			<div id="alert"><%= show_flash %></div>
 			<div class="pagecontent" id="pagecontent">
 				<%= yield %>
 			</div>

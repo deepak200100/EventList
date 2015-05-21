@@ -8,12 +8,11 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	binding.pry
 	  if @user.save  
-	    flash[:notice] = "Registration successful."  
+	    flash.now[:notice] = "Registration successful."  
 	    redirect_to root_url  
 	  else  
-	    flash[:notice] = "Registration unsuccessful."  
+	    flash.now[:notice] = "Registration unsuccessful."  
 	    render :action => 'new'  
 	  end  
 	end
