@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516063515) do
+ActiveRecord::Schema.define(version: 20150523125002) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "city_name",  limit: 255
