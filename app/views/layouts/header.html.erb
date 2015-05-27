@@ -7,7 +7,11 @@
         <li><%= link_to "SignUp", new_user_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
+        <label>Welcome <%= current_user.username %></label>
+        <% if current_user %><li><%= link_to "SignOut",logout_path%></li>
+        <%else %>
+        <li><%= link_to "SignIn", new_user_session_path %></li>
+        <%end%>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Location<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

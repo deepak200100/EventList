@@ -1,0 +1,6 @@
+<%= form_for @user_session do |f| %>
+ <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.password_field(:password) %>   
+  <%= f.submit %>
+<% end %>
