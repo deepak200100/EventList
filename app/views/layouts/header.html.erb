@@ -7,8 +7,9 @@
         <li><%= link_to "SignUp", new_user_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
         <label>Welcome <%= current_user.username %></label>
-        <% if current_user %><li><%= link_to "SignOut",logout_path%></li>
+        <li><%= link_to "SignOut",logout_path%></li>
         <%else %>
         <li><%= link_to "SignIn", new_user_session_path %></li>
         <%end%>
