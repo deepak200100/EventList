@@ -2,5 +2,6 @@
  <%= f.label :email %><br>
   <%= f.text_field :email %><br>
   <%= f.password_field(:password) %>   
-  <%= f.submit %>
+  <%= f.submit "Login", class: "btn btn-default btn-primary" %>
 <% end %>
+<%= link_to "Forget password", new_password_reset_path %></li>
