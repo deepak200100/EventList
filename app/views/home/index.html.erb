@@ -1,28 +1,26 @@
-<style>
-.add_clubs{
-	position:fixed;
-	bottom:5px;
-	right:10px;
-	padding:10px 10px;
-}
-.grid{
-    border-radius: 25px;
-    border: 2px solid #8AC007;
-    margin: 9px;
-    cursor: pointer;
-}
-</style>
-<% @clubs.each_slice(4) do |four| %>
-          <div class="row" style="padding:20px;">
-             <% four.each do |club| %>
-             	<div class="col-md-2 grid">
-					Name : <%=club.display_name%><br>
-					Address: <%=club.address%><br>
-					City : <%=club.city%><br>
-					Phone Number:<%=club.phone_number%><br>
-					<img src=<%=club.display_pic%> width="100px" height="100px">
-             	</div>
-             <% end %>
-          </div>
- <% end %>
-<%= button_to "+", new_club_path, :class => "add_clubs", :method => :get %>
+<%= form_tag home_search_path,:html => {:class => "court_search_form"} do %>
+    <div class="control-group">
+        <label>City</label>
+        <div class="controls">
+        	<%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name)) %>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label>Sports</label>
+        <div class="controls">
+        	<%= select_tag(:sport_id, options_from_collection_for_select(Sport.all, :id, :name)) %>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label>Date</label>
+        <div class="controls">
+        	<% date_array = (Date.today..Date.today.advance(:days => 13)).map.with_index{ |date,i| [date.strftime("%a, %b %d"),i] }%>
+        	<%= select_tag(:date, options_for_select(date_array)) %>
+        </div>
+    </div>
+    <div class="button-container">
+        <%= submit_tag  "Search" , :class => "hs_btnCtaSml hs_btnTypeSubmit" %>
+    </div>
+<% end %>
