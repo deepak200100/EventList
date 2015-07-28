@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   
   before_filter :search_clubs,:only => [:search]
   def index
+    render :file => "home/home.html",:layout => false
   end
 
   def search
